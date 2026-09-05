@@ -2,7 +2,7 @@
   "name": "nrsa",
   "productName": "NRSA",
   "version": "0.1.0",
-  "description": "NRSA \u2014 Structural Design & Analysis Software (RCC, Steel, Foundation, Analysis, Drawings)",
+  "description": "NRSA — Structural Design & Analysis Software (RCC, Steel, Foundation, Analysis, Drawings)",
   "author": "NRSA",
   "license": "SEE LICENSE IN LICENSE",
   "private": true,
@@ -19,7 +19,7 @@
   "build": {
     "appId": "com.nrsa.structuraldesign",
     "productName": "NRSA",
-    "copyright": "Copyright \u00A9 NRSA",
+    "copyright": "Copyright © NRSA",
     "asar": true,
     "directories": {
       "output": "release",
@@ -38,7 +38,8 @@
           "arch": ["x64"]
         }
       ],
-      "icon": "build/icon.ico"
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false
     },
     "nsis": {
       "oneClick": false,
