@@ -1,0 +1,55 @@
+{
+  "name": "nrsa",
+  "productName": "NRSA",
+  "version": "0.1.0",
+  "description": "NRSA \u2014 Structural Design & Analysis Software (RCC, Steel, Foundation, Analysis, Drawings)",
+  "author": "NRSA",
+  "license": "SEE LICENSE IN LICENSE",
+  "private": true,
+  "main": "electron/main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.nrsa.structuraldesign",
+    "productName": "NRSA",
+    "copyright": "Copyright \u00A9 NRSA",
+    "asar": true,
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "assets/**/*",
+      "prototype/NRSA_RCC.html",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "NRSA",
+      "artifactName": "NRSA-Setup-${version}.${ext}",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico"
+    }
+  }
+}

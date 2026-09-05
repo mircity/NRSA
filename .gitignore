@@ -1,0 +1,25 @@
+# Node / Electron
+node_modules/
+release/
+dist/
+dist_electron/
+*.log
+npm-debug.log*
+
+# CMake / C++ build output
+build_cmake/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.obj
+*.o
+*.exe
+*.pdb
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

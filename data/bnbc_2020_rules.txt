@@ -1,0 +1,50 @@
+# BNBC 2020 code rules -- Code Update System data file (roadmap Section 7)
+# Format: code|version|chapter|clause|description|value|unit
+# Every value below was fetched and checked directly against the
+# official BNBC 2020 Part 6 Chapter 2 text on 2026-08-27, and matches
+# the hardcoded constants in analysis::SeismicAnalysis,
+# analysis::WindAnalysis, and loads::LoadWizard exactly --
+# tests/test_code_rule_store.cpp's testMigratedRulesMatchHardcodedConstants
+# cross-checks every single line below against those modules' own
+# functions, so this file drifting out of sync with the hardcoded code
+# would be caught immediately, in either direction.
+#
+# Table 6.2.16: seismic site coefficients (S, TB, TC, TD per soil type)
+BNBC|2020|6.2.16|SA_S|Site coefficient S, soil type SA|1.0|dimensionless
+BNBC|2020|6.2.16|SA_TB|Corner period TB, soil type SA|0.15|s
+BNBC|2020|6.2.16|SA_TC|Corner period TC, soil type SA|0.40|s
+BNBC|2020|6.2.16|SA_TD|Corner period TD, soil type SA|2.0|s
+BNBC|2020|6.2.16|SB_S|Site coefficient S, soil type SB|1.2|dimensionless
+BNBC|2020|6.2.16|SB_TB|Corner period TB, soil type SB|0.15|s
+BNBC|2020|6.2.16|SB_TC|Corner period TC, soil type SB|0.50|s
+BNBC|2020|6.2.16|SB_TD|Corner period TD, soil type SB|2.0|s
+BNBC|2020|6.2.16|SC_S|Site coefficient S, soil type SC|1.15|dimensionless
+BNBC|2020|6.2.16|SC_TB|Corner period TB, soil type SC|0.20|s
+BNBC|2020|6.2.16|SC_TC|Corner period TC, soil type SC|0.60|s
+BNBC|2020|6.2.16|SC_TD|Corner period TD, soil type SC|2.0|s
+BNBC|2020|6.2.16|SD_S|Site coefficient S, soil type SD|1.35|dimensionless
+BNBC|2020|6.2.16|SD_TB|Corner period TB, soil type SD|0.20|s
+BNBC|2020|6.2.16|SD_TC|Corner period TC, soil type SD|0.80|s
+BNBC|2020|6.2.16|SD_TD|Corner period TD, soil type SD|2.0|s
+BNBC|2020|6.2.16|SE_S|Site coefficient S, soil type SE|1.4|dimensionless
+BNBC|2020|6.2.16|SE_TB|Corner period TB, soil type SE|0.15|s
+BNBC|2020|6.2.16|SE_TC|Corner period TC, soil type SE|0.50|s
+BNBC|2020|6.2.16|SE_TD|Corner period TD, soil type SE|2.0|s
+#
+# Table 6.2.20: approximate period coefficients (Ct, m per structure type)
+BNBC|2020|6.2.20|ConcreteFrame_Ct|Period coeff. Ct, concrete moment frames|0.0466|dimensionless
+BNBC|2020|6.2.20|ConcreteFrame_m|Period coeff. m, concrete moment frames|0.9|dimensionless
+BNBC|2020|6.2.20|SteelFrame_Ct|Period coeff. Ct, steel moment frames|0.0724|dimensionless
+BNBC|2020|6.2.20|SteelFrame_m|Period coeff. m, steel moment frames|0.8|dimensionless
+BNBC|2020|6.2.20|Other_Ct|Period coeff. Ct, all other structural systems|0.0488|dimensionless
+BNBC|2020|6.2.20|Other_m|Period coeff. m, all other structural systems|0.75|dimensionless
+#
+# Table 6.2.3 / 6.2.4: minimum uniformly distributed live loads
+BNBC|2020|6.2.3|Residential|Live load, residential dwellings|2.00|kPa
+BNBC|2020|6.2.3|Office|Live load, offices|2.40|kPa
+BNBC|2020|6.2.3|Hospital|Live load, hospital patient rooms|2.00|kPa
+BNBC|2020|6.2.3|School|Live load, school classrooms|2.00|kPa
+BNBC|2020|6.2.3|Parking|Live load, passenger vehicle garages|2.00|kPa
+BNBC|2020|6.2.3|Commercial|Live load, retail stores first floor|4.80|kPa
+BNBC|2020|6.2.3|Storage|Live load, light storage warehouses|6.00|kPa
+BNBC|2020|6.2.4|Roof|Live load, ordinary flat roof|1.00|kPa
