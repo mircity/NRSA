@@ -1,25 +1,22 @@
 {
   "name": "nrsa",
   "productName": "NRSA",
-  "version": "0.1.0",
-  "description": "NRSA — Structural Design & Analysis Software (RCC, Steel, Foundation, Analysis, Drawings)",
+  "version": "0.2.79",
+  "description": "NRSA Desktop Application",
   "author": "NRSA",
-  "license": "SEE LICENSE IN LICENSE",
   "private": true,
   "main": "electron/main.js",
-  "homepage": "./",
   "scripts": {
     "start": "electron .",
-    "dist:win": "electron-builder --win --x64"
+    "dist:win": "electron-builder --win nsis --x64"
   },
   "devDependencies": {
-    "electron": "^31.3.1",
+    "electron": "^31.7.7",
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.nrsa.structuraldesign",
+    "appId": "com.nrsa.desktop",
     "productName": "NRSA",
-    "copyright": "Copyright © NRSA",
     "asar": true,
     "directories": {
       "output": "release",
@@ -28,29 +25,39 @@
     "files": [
       "electron/**/*",
       "assets/**/*",
-      "prototype/NRSA_RCC.html",
+      "prototype/**/*",
+      "src/**/*",
       "package.json"
     ],
     "win": {
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
-      "icon": "build/icon.ico",
-      "signAndEditExecutable": false
+      "icon": "build/icon.ico"
     },
     "nsis": {
-      "oneClick": false,
+      "oneClick": true,
       "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
+      "allowToChangeInstallationDirectory": false,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "NRSA",
-      "artifactName": "NRSA-Setup-${version}.${ext}",
-      "installerIcon": "build/icon.ico",
-      "uninstallerIcon": "build/icon.ico"
-    }
+      "artifactName": "NRSA-Setup-${version}.${ext}"
+    },
+    "fileAssociations": [
+      {
+        "ext": "nrsa",
+        "name": "NRSA Project",
+        "description": "NRSA Structural Project",
+        "role": "Editor",
+        "icon": "build/icon.ico"
+      }
+    ],
+    "artifactName": "NRSA-Setup-${version}.${ext}"
   }
 }
